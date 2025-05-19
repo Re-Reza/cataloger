@@ -10,140 +10,204 @@ import {
   logoVarient,
   textVarient,
   topicVarient,
+  borderMotion,
 } from "../utils/varients";
+// import { InView, useInView } from "react-intersection-observer";
 import About2 from "./About2";
 
-const AboutUs: FC<{ slides: number; prevSlides: number }> = ({
+const AboutUs: FC<{ activeSlide: number; prevSlides: number }> = ({
   prevSlides,
-  slides,
+  activeSlide,
 }) => {
-  {
-    /* <button
+  /* <button
             onClick={() => navigateSlide(1)}
             className="homeNavigate absolute top-[3%] left-[2%] text-[2em]"
           >
             <FaList />
           </button> */
-  }
-  const divRef = useRef(null);
-  const [isVisible, setIsVisible] = useState(false);
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
-      { threshold: 0.01 }
-    );
-
-    if (divRef.current) {
-      observer.observe(divRef.current);
-    }
-
-    return () => {
-      if (divRef.current) {
-        observer.unobserve(divRef.current);
-      }
-    };
-  }, []);
 
   return (
     <>
-      <SwiperSlide key={1} className="p-[3em]">
-        <div className="flex gap-[4em] h-full">
-          <motion.div
-            className="w-[60%]"
-            variants={factoryVarient}
-            initial="hidden"
-            whileInView="visible"
-          >
-            <Image
-              className="h-full w-full"
-              src="/images/factory.jpg"
-              width={350}
-              height={350}
-              alt="facory"
-            />
-          </motion.div>
-          <div className="flex flex-col justify-between pb-[9%]">
+      <SwiperSlide key={0} className="p-[3em]">
+        {activeSlide + prevSlides == 1 ? (
+          <div className="flex gap-[4em] h-full">
             <motion.div
-              variants={logoVarient}
+              className="w-[60%]"
+              variants={factoryVarient}
               initial="hidden"
               whileInView="visible"
-              className="flex items-center gap-4"
             >
               <Image
-                src="/images/logo.png"
-                width={110}
-                height={110}
-                alt="logo"
+                className="h-full w-full"
+                src="/images/factory.jpg"
+                width={350}
+                height={350}
+                alt="facory"
               />
-              <h1 className="text-[darkBlue] font-[700] text-[1.7em]">
-                شرکت تولیدی
-                <br />
-                مدرن تجهیز صنعت برین
-              </h1>
             </motion.div>
+            <div className="flex flex-col justify-between pb-[9%]">
+              <motion.div
+                variants={logoVarient}
+                initial="hidden"
+                whileInView="visible"
+                className="flex items-center gap-4"
+              >
+                <Image
+                  src="/images/logo.png"
+                  width={110}
+                  height={110}
+                  alt="logo"
+                />
+                <h1 className="text-[darkBlue] font-[700] text-[1.7em]">
+                  شرکت تولیدی
+                  <br />
+                  مدرن تجهیز صنعت برین
+                </h1>
+              </motion.div>
 
-            <motion.div
-              variants={textVarient}
-              initial="hidden"
-              whileInView="visible"
-              className="p-[0.5em] bg-white rounded-lg text-justify"
-            >
-              <h2 className="text-[1.5em] text-[darkBlue] font-[600] mb-4">
-                خوش آمدید
-              </h2>
-              <p className="font-[500] text-[1.06em] leading-[1.8]">
-                به جهان مدرن تجهیز صنعت برین خوش آمدید.
-                <br />
-                جایی که نوآوری، کیفیت و دقت در طراحی و تولید تجهیزات آموزشی و
-                اداری معنا می یابد ما در برین با تکیه بر تجربه، تخصص و نگاه
-                آینده نگر تلاش کرده ایم تا فضاهای آموزشی و کاری را به محیط هایی
-                کارآمد، زیبا و الهام بخش تبدیل کنیم. این کاتالوگ، دریچه ای است
-                به بخشی از مسیر ما، مسیری که با اعتماد شما& هر روز روشن تر می
-                شود.
-              </p>
-            </motion.div>
+              <motion.div
+                variants={textVarient}
+                viewport={{ once: false }}
+                initial="hidden"
+                whileInView="visible"
+                className="p-[0.76em] bg-white text-justify border-solid border-[darkBlue] border-[2px] relative left-[17%]"
+              >
+                <h2 className="text-[1.5em] text-[darkBlue] font-[600] mb-4">
+                  خوش آمدید
+                </h2>
+                <p className="font-[500] text-[1.06em] leading-[1.8]">
+                  به جهان مدرن تجهیز صنعت برین خوش آمدید.
+                  <br />
+                  جایی که نوآوری، کیفیت و دقت در طراحی و تولید تجهیزات آموزشی و
+                  اداری معنا می یابد ما در برین با تکیه بر تجربه، تخصص و نگاه
+                  آینده نگر تلاش کرده ایم تا فضاهای آموزشی و کاری را به محیط
+                  هایی کارآمد، زیبا و الهام بخش تبدیل کنیم. این کاتالوگ، دریچه
+                  ای است به بخشی از مسیر ما، مسیری که با اعتماد شما& هر روز روشن
+                  تر می شود.
+                </p>
+              </motion.div>
+            </div>
           </div>
-        </div>
+        ) : (
+          <></>
+        )}
       </SwiperSlide>
 
       <SwiperSlide key={1} className="p-[3em]">
-        <div
-          // {`introContainer ${isVisible ? "animate" : ""}`}
-          className="introContainer"
-          // ref={divRef}
-        >
-          <motion.h2
-            variants={topicVarient}
+        {activeSlide + prevSlides == 2 ? (
+          <motion.div
+            className="introContainer"
+            variants={borderMotion}
             initial="hidden"
             whileInView="visible"
-            className="intro"
           >
-            معرفی مدرن تجهیز صنعت برین
-          </motion.h2>
+            <motion.h2
+              variants={topicVarient}
+              initial="hidden"
+              whileInView="visible"
+              className="intro"
+            >
+              معرفی مدرن تجهیز صنعت برین
+            </motion.h2>
 
-          <div>
-            <motion.p className="text-center  font-[700]">
-              شرکت تولیدی مدرن تجهیز صنعت برین با افتخار به عنوان یکی از پیشروان
-              صنعت نوسازی و تجهیز مدارس، به ارائه خدماتی گسترده در زمینه طراحی،
-              تولید و نصب انواع میز و نیمکت مدارس میپردازد. ای شرکت با بهره گیری
-              از تکنولوژی های مدرن و مواد اولیه با کیفیت، محصولاتی را تولید می
-              کند که عـــلاوه بر دوام و استحکام، به راحتی و ایمنی دانش آمــوزان
-              نیز توجه ویژه ای دارد. تیم حرفــه ای ما با تخصص در زمینه نوســـازی
-              مدارس، به روززسانی تجهیزات و ارائه راهکارهای خلاقانه، محیطی مناسب
-              و الهام بخش برای دانش آموزان ایجاد می کند.
-            </motion.p>
-            <motion.div>
-              <Image>
-                
-              </Image>
-            </motion.div>
-          </div>
-        </div>
-        {/* <About2 /> */}
+            <div className="p-[2em] pt-[4em] flex flex-col items-center h-full">
+              <div className="w-[60%] h-full">
+                <motion.p
+                  variants={logoVarient}
+                  initial="hidden"
+                  whileInView="visible"
+                  className="text-justify text-center font-[700] text-[1.1em] leading-[1.8]"
+                >
+                  شرکت تولیدی مدرن تجهیز صنعت برین با افتخار به عنوان یکی از
+                  پیشروان صنعت نوسازی و تجهیز مدارس، به ارائه خدماتی گسترده در
+                  زمینه طراحی، تولید و نصب انواع میز و نیمکت مدارس میپردازد. ای
+                  شرکت با بهره گیری از تکنولوژی های مدرن و مواد اولیه با کیفیت،
+                  محصولاتی را تولید می کند که عـــلاوه بر دوام و استحکام، به
+                  راحتی و ایمنی دانش آمــوزان نیز توجه ویژه ای دارد. تیم حرفــه
+                  ای ما با تخصص در زمینه نوســـازی مدارس، به روززسانی تجهیزات و
+                  ارائه راهکارهای خلاقانه، محیطی مناسب و الهام بخش برای دانش
+                  آموزان ایجاد می کند.
+                </motion.p>
+                <motion.div className="mt-4">
+                  <Image
+                    className="h-full"
+                    src="/images/factory.jpg"
+                    width={50}
+                    height={50}
+                    alt="facory"
+                  />
+                </motion.div>
+              </div>
+            </div>
+          </motion.div>
+        ) : (
+          <></>
+        )}
+      </SwiperSlide>
+
+      <SwiperSlide key={2} className="p-[2em]">
+        {activeSlide + prevSlides == 3 ? (
+          <>
+            <div className="grid grid-cols-2 gap-[22px] flex justify-center gap-5">
+              <div className="text-[darkBlue]">
+                <motion.div className="border-solid p-[0.6em] pt-[1.2em] pb-[3em] border-[darkBlue] border-l-[2.5px] border-t-[2.5px] border-b-[2.5px] border-r-0">
+                  <h2 className="text-[1.7em] mb-5 font-[800]">
+                    چرا ما را انتخاب کنید؟
+                  </h2>
+                  <p className="text-justify text-center font-[700] text-[1.1em] leading-[1.8] text-[blueDark]">
+                    انتخاب شرکت مدرن تجــهیز صنعت برین انتخاب حرفه ای هاست. ما
+                    با ارائه محصولات باکیفیت و بهره گیری از تکـــنولوژی های روز،
+                    نیاز های شمارا به بهترین شکل ممکن پاسخ می دهیم. تیم متخصص ما
+                    با تجریه و تعــهد بالا، خدمات مشاوره رایگان و پشتیبانی 24
+                    ساعته را ارائه می دهد تا مطمئن شوید که پروژه شما به طور کامل
+                    و به موقع اجرا می شود. باما شما از یک همکاری پایدار و
+                    محصولات ماندگار بهره مند خواهید شد که به ارتقای محیط آموزشی
+                    شما کمک می کند.
+                  </p>
+                </motion.div>
+                <motion.div className="p-[0.6em] pt-[1.2em] pb-[14em] text-[darkBlue] border-r-[2.5px] border-b-0 border-l-0 border-t-0 border-solid border-r-[blueDark]">
+                  <p className="text-[1.6em] font-[800] text-justify text-center leading-[1.8]">
+                    قیمت مناسب و اجــــــرای به موقع کیفیت برتر و محصولات
+                    ماندگــــار خدمــات پس از فروش و پشتیبانی مداوم
+                  </p>
+                </motion.div>
+              </div>
+              <div>
+                <motion.div
+                // variants={textVarient}
+                // initial="hidden"
+                // whileInView="visible"
+                >
+                  <Image
+                    className="w-full mb-[25px]"
+                    src="/images/imageIntroTop.jpg"
+                    width={350}
+                    height={350}
+                    alt="imageIntroTop"
+                  />
+                </motion.div>
+                <motion.div
+                // variants={textVarient}
+                // initial="hidden"
+                // whileInView="visible"
+                >
+                  <Image
+                    className="w-full"
+                    src="/images/imageIntroBottom.jpg"
+                    width={350}
+                    height={350}
+                    alt="imageIntroBottom"
+                  />
+                </motion.div>
+              </div>
+            </div>
+            <div className="w-full word-space-c font-[600] tracking-[4px] text-[darkBlue] text-[1.1em] border-solid border-r-0 border-b-[0] text-left border-l-[2.5px] border-t-[2.5px] border-t-[blueDark] border-l-[blueDark] p-[2em]">
+              MANUFACTURING COMPANY MTSB
+            </div>
+          </>
+        ) : (
+          <></>
+        )}
       </SwiperSlide>
     </>
   );

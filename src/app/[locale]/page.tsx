@@ -305,7 +305,7 @@ export default function Home() {
         slidesPerView={1}
         className="mainContainer h-[90vh] w-[70%] bg-white"
       >
-        <AboutUs slides={state.sliderPage} prevSlides={0}/>
+        <AboutUs activeSlide={state.sliderPage} prevSlides={0}/>
         <SwiperSlide>
           <CatalogueList
             slidTo={navigateSlide}

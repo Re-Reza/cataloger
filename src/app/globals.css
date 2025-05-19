@@ -119,9 +119,6 @@ video {
   }
 }
 
-body {
-}
-
 @layer utilities {
   .text-balance {
     text-wrap: balance;
@@ -133,7 +130,7 @@ body {
   box-shadow: 0 0 44px #0000001f;
   border-radius: 16px;
   padding: 1em;
-  background: url("../../public/images/background-01\ \(2\).jpg");
+  background: url("../../public/images/bgNem.jpg");
   background-size: cover;
 }
 .catalogueList {
@@ -192,83 +189,61 @@ body {
   border-radius: 10px;
   box-shadow: 0 0 13px #0000001c;
 }
-/* .introContainer {
-  width: 200px;
-  height: 200px;
-  position: relative;
-  border: 2px solid white;
-  padding: 20px;
-  /* display: inline-block; */
-/* width: 100%; */
-/* height: 100%; */
-/* box-sizing: border-box; */
-/* } */
-/* @keyframes drawBorder {
-  to {
-    clip-path: inset(0 0 0 0);
-  }
-/* } */
-
 .introContainer {
   width: 100%;
   height: 100%;
-  border: solid 2px var(--lightBlue);
+  border: solid 3px var(--lightBlue);
   position: relative;
-  /* background: pink; */
-  /* animation: changeBorders 5s linear; */
-}
-.animate {
-  animation: changeBorders 5s linear;
+  /* animation: changeBorders 3s linear; */
 }
 @keyframes changeBorders {
   0% {
-    border: solid 5px white;
-    border-left: solid 5px var(--lightBlue);
+    border: solid 3px #eee;
+    border-left: solid 3px var(--lightBlue);
   }
   25% {
-    border: solid 5px white;
-    border-left: solid 5px var(--lightBlue);
+    border: solid 3px #eee;
+    border-left: solid 3px var(--lightBlue);
   }
   25.02% {
-    border: solid 5px white;
-    border-left: solid 5px var(--lightBlue);
-    border-bottom: solid 5px var(--lightBlue);
+    border: solid 3px #eee;
+    border-left: solid 3px var(--lightBlue);
+    border-bottom: solid 3px var(--lightBlue);
   }
   50% {
-    border: solid 5px white;
-    border-left: solid 5px var(--lightBlue);
-    border-bottom: solid 5px var(--lightBlue);
+    border: solid 3px #eee;
+    border-left: solid 3px var(--lightBlue);
+    border-bottom: solid 3px var(--lightBlue);
   }
   50.02% {
-    border: solid 5px white;
-    border-left: solid 5px var(--lightBlue);
-    border-bottom: solid 5px var(--lightBlue);
-    border-right: solid 5px var(--lightBlue);
+    border: solid 3px #eee;
+    border-left: solid 3px var(--lightBlue);
+    border-bottom: solid 3px var(--lightBlue);
+    border-right: solid 3px var(--lightBlue);
   }
   75% {
-    border: solid 5px white;
-    border-left: solid 5px var(--lightBlue);
-    border-bottom: solid 5px var(--lightBlue);
-    border-right: solid 5px var(--lightBlue);
+    border: solid 3px #eee;
+    border-left: solid 3px var(--lightBlue);
+    border-bottom: solid 3px var(--lightBlue);
+    border-right: solid 3px var(--lightBlue);
   }
   75.02% {
-    border: solid 5px var(--lightBlue);
+    border: solid 3px var(--lightBlue);
   }
 }
-
-.introContainer::after {
+/* .introContainer::after {
   width: 5px;
-  background-color: white;
+  background-color: #eee;
   height: 0px;
   position: absolute;
   bottom: 0;
   left: -5px;
   z-index: 1;
-  animation: movedown 5s linear;
+  animation: movedown 3s linear;
   animation-fill-mode: forwards;
   content: "";
   display: inline-block;
-}
+} */
 
 @keyframes movedown {
   0% {
@@ -328,8 +303,13 @@ body {
   font-size: 1.2em;
   padding: 0 2em;
   transform: translateX(-50%);
-  background: white;
+  z-index: 4;
+  background: #dadada;
+  border-radius: 70px;
   color: var(--darkBlue);
   font-weight: bold;
   text-align: center;
+}
+.word-space-c {
+  word-spacing: 7px;
 }
