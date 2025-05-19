@@ -36,21 +36,28 @@ export const logoVarient: Variants = {
   },
 };
 
-export const textVarient: Variants = {
-  hidden: {
-    opacity: 0,
-    x: "-120%",
-  },
-  visible: {
-    opacity: 1,
-    x: 0,
-    transition: {
-      ease: [0, 0.71, 0.2, 1.01],
-      type: "spring",
-      // bounce: 0.4,
-      duration: 2,
+export const HorizontalSlideAppear: (
+  initialX: number | string,
+  duration: number,
+  delay: number
+) => Variants = (initialX, duration, delay) => {
+  return {
+    hidden: {
+      opacity: 0,
+      x: initialX,
     },
-  },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        ease: [0, 0.71, 0.2, 1.01],
+        type: "spring",
+        // bounce: 0.4,
+        duration: duration,
+        delay: delay,
+      },
+    },
+  };
 };
 
 export const topicVarient: Variants = {
@@ -101,4 +108,37 @@ export const borderMotion: Variants = {
       duration: 3,
     },
   },
+};
+
+export const bottomTotop: Variants = {
+  hidden: {
+    y: "100%",
+  },
+  visible: {
+    y: 0,
+    transition: {
+      type: "spring",
+      // bounce: 0.4,
+      duration: 1.5,
+    },
+  },
+};
+
+export const opacityAppear: (
+  delay: number,
+  duration: number | string
+) => Variants = (delay, duration) => {
+  return {
+    hidden: {
+      opacity: 0,
+    },
+    visible: {
+      opacity: 1,
+      transition: {
+        type: "spring",
+        delay: delay,
+        duration,
+      },
+    },
+  };
 };

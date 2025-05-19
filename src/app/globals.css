@@ -313,3 +313,21 @@ video {
 .word-space-c {
   word-spacing: 7px;
 }
+.robot1Box {
+  background-image: url("../../public/images/robot1.jpg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.robot2Box {
+  background-image: url("../../public/images/robot2.jpg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.robot3Box {
+  background-image: url("../../public/images/robot3.jpg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
