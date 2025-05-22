@@ -39,7 +39,7 @@ const AboutUs: FC<{ activeSlide: number; prevSlides: number }> = ({
               initial="hidden"
               whileInView="visible"
             >
-              <Image
+              <img
                 className="h-full w-full"
                 src="/images/factory.jpg"
                 width={350}
@@ -54,7 +54,7 @@ const AboutUs: FC<{ activeSlide: number; prevSlides: number }> = ({
                 whileInView="visible"
                 className="flex items-center gap-4"
               >
-                <Image
+                <img
                   src="/images/logo.png"
                   width={110}
                   height={110}
@@ -130,15 +130,12 @@ const AboutUs: FC<{ activeSlide: number; prevSlides: number }> = ({
                   ارائه راهکارهای خلاقانه، محیطی مناسب و الهام بخش برای دانش
                   آموزان ایجاد می کند.
                 </motion.p>
-                <motion.div className="mt-4">
-                  <Image
-                    className="h-full"
-                    src="/images/factory.jpg"
-                    width={50}
-                    height={50}
-                    alt="facory"
-                  />
-                </motion.div>
+                <motion.div
+                  className="mt-6 factoryBg"
+                  variants={bottomTotop}
+                  initial="hidden"
+                  whileInView="visible"
+                ></motion.div>
               </div>
             </div>
           </motion.div>
@@ -198,7 +195,7 @@ const AboutUs: FC<{ activeSlide: number; prevSlides: number }> = ({
                   initial="hidden"
                   whileInView="visible"
                 >
-                  <Image
+                  <img
                     className="w-full mb-[25px]"
                     src="/images/imageIntroTop.jpg"
                     width={350}
@@ -211,7 +208,7 @@ const AboutUs: FC<{ activeSlide: number; prevSlides: number }> = ({
                   initial="hidden"
                   whileInView="visible"
                 >
-                  <Image
+                  <img
                     className="w-full"
                     src="/images/imageIntroBottom.jpg"
                     width={350}
@@ -235,6 +232,7 @@ const AboutUs: FC<{ activeSlide: number; prevSlides: number }> = ({
           <></>
         )}
       </SwiperSlide>
+      
       <SwiperSlide key={3} className="p-[2em]">
         {activeSlide + prevSlides == 4 ? (
           <div className="h-full flex flex-col justify-center">

@@ -331,3 +331,11 @@ video {
   background-position: center;
   background-repeat: no-repeat;
 }
+.factoryBg {
+  background-image: url("../../public/images/factory2.jpg");
+  width: 100%;
+  height: 67%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
