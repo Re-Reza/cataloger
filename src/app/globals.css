@@ -339,3 +339,43 @@ video {
   background-size: contain;
   background-position: center;
 }
+.slidebgImg {
+  background: url("../../public/images/bgNem.jpg");
+}
+.custom-shadow-1 {
+  box-shadow: -5px 0 5px -5px rgba(0, 0, 0, 0.3),
+    0 5px 5px -5px rgba(0, 0, 0, 0.3);
+}
+.custom-shadow-2 {
+  box-shadow: 0 -5px 5px -5px rgba(0, 0, 0, 0.3),
+    0 5px 5px -5px rgba(0, 0, 0, 0.3);
+}
+/* ----------------------------------- media query ---------------------------------- */
+
+@media only screen and (min-width: 1800px) {
+  .swiperContainer {
+    width: 70%;
+  }
+}
+@media only screen and (max-width: 1800px) {
+  .swiperContainer {
+    width: 70%;
+  }
+}
+@media only screen and (max-width: 1500px) {
+  .swiperContainer {
+    width: 88%;
+    font-size: 14px;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .swiperContainer {
+    width: 95%;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .swiperContainer {
+    width: 99%;
+    font-size: 11px;
+  }
+}

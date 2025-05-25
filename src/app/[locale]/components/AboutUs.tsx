@@ -28,6 +28,44 @@ const AboutUs: FC<{ activeSlide: number; prevSlides: number }> = ({
             <FaList />
           </button> */
 
+  const valuesItems = [
+    {
+      title: "نوآوری مستمر",
+      text: "ما هــمواره در جستجوی تازه ترین فناوری ها و راهکارهای هوشمندانه هستیم تا مرزهای موفقیت و پیشترفت را جابجا کنیم.",
+      image: "",
+    },
+    {
+      title: "انسان محوری",
+      text: "در همه ی تصمیم ها و طراحی های ما، آسایش، رشد و شکوفایی انسان ها اولویت اصلی است.",
+      image: "",
+    },
+    {
+      title: "تعهد به کیفیت",
+      text: "ما به ارائه محصولاتی متعهدیم که استانداردهای جهانی را رعایت کرده و فراتر از انتظار مشتریان می باشد.",
+      image: "",
+    },
+    {
+      title: "مسئولیت اجتماعی",
+      text: "ما به عنوان یک سازمان پیشرو، به تاثیر مثبت در جامعه و محیط زیست اعتقاد داریم و همواره در راستای ایجاد تغییرات پایدار در جامعه گام بر می داریم.",
+      image: "",
+    },
+    {
+      title: "یادگیری و رشد مداوم",
+      text: "ما فرهـنگ یادگـیری همیشگی را در سازمان ترویج می دهیم تا همیشه آماده ی مواجه با آینده باشیم",
+      image: "",
+    },
+    {
+      title: "صداقت و شفافیت",
+      text: "ما به اصول صداقت، شفافیت و احترام در تمام ارتباطات داخلی و خارجی خو پایبندیم ",
+      image: "",
+    },
+    {
+      title: "همکاری هوشمندانه",
+      text: "ما به قدرت کار تیمی هوشمند، مشارکت اثر بخش و هم افزایی تخصص ها باور داریم.",
+      image: "",
+    },
+  ];
+
   return (
     <>
       <SwiperSlide key={0} className="p-[3em]">
@@ -232,7 +270,7 @@ const AboutUs: FC<{ activeSlide: number; prevSlides: number }> = ({
           <></>
         )}
       </SwiperSlide>
-      
+
       <SwiperSlide key={3} className="p-[2em]">
         {activeSlide + prevSlides == 4 ? (
           <div className="h-full flex flex-col justify-center">
@@ -252,7 +290,7 @@ const AboutUs: FC<{ activeSlide: number; prevSlides: number }> = ({
                 initial="hidden"
                 whileInView="visible"
               >
-                در کارخانه مدرنت تجهیز صنعت برین، بهره گیری از ربات های پـیشرفته
+                در کارخانه مدرن تجهیز صنعت برین، بهره گیری از ربات های پـیشرفته
                 جوشکار، گامی بلند در راستای افزایش بهره وری، یکنواختی کیفیت و
                 کاهش زمان تولید برداشته ایم. این فناوری نوین، امکان اجرای
                 اتصالات دقیق، مستحکم و یکدست را در ساهت محصولات فراهم می کند و
@@ -280,6 +318,85 @@ const AboutUs: FC<{ activeSlide: number; prevSlides: number }> = ({
                 initial="hidden"
                 whileInView="visible"
               ></motion.div>
+            </div>
+          </div>
+        ) : (
+          <></>
+        )}
+      </SwiperSlide>
+
+      <SwiperSlide key={4} className="py-[2em]">
+        {activeSlide + prevSlides == 5 ? (
+          <div>
+            <div className="flex justify-end pr-[2.8em]">
+              <div className="text-start w-full border-[darkBlue] p-[1.8em] border-solid border-l-0 border-t-[2px] border-b-[2px] border-r-[2px]">
+                <h2 className="font-[700] text-[1.4em] text-[darkBlue]">
+                  ارزش های مدرن تجهیز صنعت برین
+                </h2>
+              </div>
+            </div>
+            <div className="p-[2.8em] grid grid-cols-2 gap-[2em]">
+              {valuesItems.map((item, index) => (
+                <div key={index} className="text-[darkBlue]">
+                  <div className="mb-5">
+                    <div className="font-[700] text-[1.05em]">{item.title}</div>
+                  </div>
+                  <p className="font-[500] leading-[1.8]">{item.text}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        ) : (
+          <></>
+        )}
+      </SwiperSlide>
+
+      <SwiperSlide key={5} className="p-[2em] bg-[darkBlue]">
+        {activeSlide + prevSlides == 6 ? (
+          <div className="grid h-full grid-cols-[2fr,8fr]">
+            <div>
+              <Image
+                src="/images/robot4.png"
+                className="w-[450px] absolute bottom-[-12%] right-[-4%]"
+                width={150}
+                height={150}
+                alt="robot4"
+              />
+            </div>
+            <div className="slidebgImg p-[2.8em] py-[3.4em] h-full">
+              <div className="flex justify-end">
+                <div className="custom-shadow-2 text-start w-full border-[darkBlue] p-[1.8em] border-solid border-l-0 border-t-[2px] border-b-[2px] border-r-[2px]">
+                  <h2 className="font-[700] text-[1.4em] text-[darkBlue]">
+                    فناوری جوشکاری رباتیک، سرعت، دقت و کیفیت در خدمت تولید
+                  </h2>
+                </div>
+              </div>
+              <div className="h-[90%] custom-shadow-1 border-0 h-[87%] relative border-solid border-[darkBlue] border-l-[2px] border-b-[2px] p-[1.6em] pt-[7em]">
+                <p className=" text-[darkBlue] leading-[2] font-[600] text-[1.2em] text-justify">
+                  در کارخانه مدرن تجـهیز صنعت برین، بهره گیری از رباتهای پیشرفته
+                  جوشکار، گامی بلند در راستای افزایش بهره وری، یکنواختی کیفیت و
+                  کاهش زمان تولید برداشته ایم. این فناوری نوین، امکان اجرای
+                  اتصالات دقیق، مستحکم و یکدست را در ساخت محصولات فراهم می کند و
+                  باعث ارتقای سطح کیفی تجهیزات آموزشی و اداری تولیدی ما شده است.
+                  با تکـیه بر این سیستم هوشــمند، سفارش های شما با دقت بالا و در
+                  سریع ترین زمان ممکن تولید و تحویل می گردد.
+                </p>
+                <div className="absolute bottom-[-2%] bg-[#dad4d4] px-[1em] right-0 word-space-c font-[500] tracking-[4px] text-[darkBlue] text-[1.08em]">
+                  MANUFACTURING COMPANY MTSB
+                </div>
+                <div className="absolute right-[8%] opacity-[0.1] font-[800] tracking-[4px] text-[darkBlue] text-[16em]">
+                  MTSB
+                </div>
+                <div className="flex justify-end">
+                  <Image
+                    src="/images/robot5.png"
+                    className="w-[290px] absolute left-[-7%] bottom-[-28%]"
+                    width={150}
+                    height={150}
+                    alt="robot4"
+                  />
+                </div>
+              </div>
             </div>
           </div>
         ) : (

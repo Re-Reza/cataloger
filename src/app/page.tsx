@@ -258,7 +258,7 @@ export default function Home() {
       slideIndex++;
     }
   });
- 
+
   const catalogueListData: {
     id: number;
     title: string;
@@ -276,10 +276,11 @@ export default function Home() {
   });
 
   return (
+    // <div className="2xl:p-[5em] xl:p-[3em] p-[1em] bg-[#eee] min-h-screen w-full items-center flex justify-center">
     <div className="px-[5em] bg-[#eee] min-h-screen w-full items-center flex justify-center">
       {state.sliderPage > 1 ? (
         <button
-          className="absolute text-[1.6em] text-white rounded-tl-[15px] rounded-bl-[15px] p-[0.4em] right-[0] bg-[#00000038]"
+          className="max-lg:hidden absolute text-[1.6em] text-white rounded-tl-[15px] rounded-bl-[15px] p-[0.4em] right-[0] bg-[#00000038]"
           onClick={handlePrev}
         >
           <GrFormNext />
@@ -305,7 +306,7 @@ export default function Home() {
         slidesPerView={1}
         className="mainContainer h-[90vh] w-[70%] bg-white"
       >
-        <AboutUs activeSlide={state.sliderPage} prevSlides={0}/>
+        <AboutUs activeSlide={state.sliderPage} prevSlides={0} />
         {/* <SwiperSlide>
           <CatalogueList
             slidTo={navigateSlide}
@@ -315,7 +316,7 @@ export default function Home() {
             }))}
           />
         </SwiperSlide> */}
-         {/* {transferdData.map((item, index) => (
+        {/* {transferdData.map((item, index) => (
           <SwiperSlide key={index}>
             <button
               onClick={() => navigateSlide(1)}
@@ -339,7 +340,7 @@ export default function Home() {
       </div>
       {state.sliderPage < (swiperRef?.current?.slides.length || 0) ? (
         <button
-          className="absolute bg-[#00000038] text-[1.6em] text-white rounded-tr-[15px] rounded-br-[15px] p-[0.4em] left-[0]"
+          className="max-lg:hidden absolute bg-[#00000038] text-[1.6em] text-white rounded-tr-[15px] rounded-br-[15px] p-[0.4em] left-[0]"
           onClick={handleNext}
         >
           <GrFormPrevious />
