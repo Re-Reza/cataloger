@@ -15,7 +15,16 @@ import {
   opacityAppear,
 } from "../utils/varients";
 // import { InView, useInView } from "react-intersection-observer";
-import About2 from "./About2";
+
+import icon1 from "@/../public/icons/آیکون ارزش برند-01.png";
+import icon2 from "@/../public/icons/آیکون ارزش برند-02.png";
+import icon3 from "@/../public/icons/آیکون ارزش برند-03.png";
+import icon4 from "@/../public/icons/آیکون ارزش برند-04.png";
+import icon5 from "@/../public/icons/آیکون ارزش برند-05.png";
+import icon6 from "@/../public/icons/آیکون ارزش برند-06.png";
+import icon7 from "@/../public/icons/آیکون ارزش برند-07.png";
+import robot1 from "@/../public/images/robot4.png";
+import robot2 from "@/../public/images/robot5.png";
 
 const AboutUs: FC<{ activeSlide: number; prevSlides: number }> = ({
   prevSlides,
@@ -32,37 +41,37 @@ const AboutUs: FC<{ activeSlide: number; prevSlides: number }> = ({
     {
       title: "نوآوری مستمر",
       text: "ما هــمواره در جستجوی تازه ترین فناوری ها و راهکارهای هوشمندانه هستیم تا مرزهای موفقیت و پیشترفت را جابجا کنیم.",
-      image: "",
+      image: icon7,
     },
     {
       title: "انسان محوری",
       text: "در همه ی تصمیم ها و طراحی های ما، آسایش، رشد و شکوفایی انسان ها اولویت اصلی است.",
-      image: "",
+      image: icon3,
     },
     {
       title: "تعهد به کیفیت",
       text: "ما به ارائه محصولاتی متعهدیم که استانداردهای جهانی را رعایت کرده و فراتر از انتظار مشتریان می باشد.",
-      image: "",
+      image: icon4,
     },
     {
       title: "مسئولیت اجتماعی",
       text: "ما به عنوان یک سازمان پیشرو، به تاثیر مثبت در جامعه و محیط زیست اعتقاد داریم و همواره در راستای ایجاد تغییرات پایدار در جامعه گام بر می داریم.",
-      image: "",
+      image: icon1,
     },
     {
       title: "یادگیری و رشد مداوم",
       text: "ما فرهـنگ یادگـیری همیشگی را در سازمان ترویج می دهیم تا همیشه آماده ی مواجه با آینده باشیم",
-      image: "",
+      image: icon2,
     },
     {
       title: "صداقت و شفافیت",
       text: "ما به اصول صداقت، شفافیت و احترام در تمام ارتباطات داخلی و خارجی خو پایبندیم ",
-      image: "",
+      image: icon5,
     },
     {
       title: "همکاری هوشمندانه",
       text: "ما به قدرت کار تیمی هوشمند، مشارکت اثر بخش و هم افزایی تخصص ها باور داریم.",
-      image: "",
+      image: icon6,
     },
   ];
 
@@ -170,7 +179,7 @@ const AboutUs: FC<{ activeSlide: number; prevSlides: number }> = ({
                 </motion.p>
                 <motion.div
                   className="mt-6 factoryBg"
-                  variants={bottomTotop}
+                  variants={bottomTotop("100%", 0, 1.5)}
                   initial="hidden"
                   whileInView="visible"
                 ></motion.div>
@@ -330,19 +339,36 @@ const AboutUs: FC<{ activeSlide: number; prevSlides: number }> = ({
           <div>
             <div className="flex justify-end pr-[2.8em]">
               <div className="text-start w-full border-[darkBlue] p-[1.8em] border-solid border-l-0 border-t-[2px] border-b-[2px] border-r-[2px]">
-                <h2 className="font-[700] text-[1.4em] text-[darkBlue]">
+                <motion.h2
+                  variants={HorizontalSlideAppear("-40vw", 2, 0)}
+                  initial="hidden"
+                  whileInView="visible"
+                  className="font-[700] text-[1.4em] text-[darkBlue]"
+                >
                   ارزش های مدرن تجهیز صنعت برین
-                </h2>
+                </motion.h2>
               </div>
             </div>
             <div className="p-[2.8em] grid grid-cols-2 gap-[2em]">
               {valuesItems.map((item, index) => (
-                <div key={index} className="text-[darkBlue]">
-                  <div className="mb-5">
+                <motion.div
+                  variants={opacityAppear(index * 0.4, 3)}
+                  initial="hidden"
+                  whileInView="visible"
+                  key={index}
+                  className="text-[darkBlue]"
+                >
+                  <div className="mb-4 flex items-center">
+                    <Image
+                      className="w-[70px]"
+                      src={item.image}
+                      loading="eager"
+                      alt={item.title}
+                    />
                     <div className="font-[700] text-[1.05em]">{item.title}</div>
                   </div>
                   <p className="font-[500] leading-[1.8]">{item.text}</p>
-                </div>
+                </motion.div>
               ))}
             </div>
           </div>
@@ -354,21 +380,30 @@ const AboutUs: FC<{ activeSlide: number; prevSlides: number }> = ({
       <SwiperSlide key={5} className="p-[2em] bg-[darkBlue]">
         {activeSlide + prevSlides == 6 ? (
           <div className="grid h-full grid-cols-[2fr,8fr]">
-            <div>
+            <motion.div
+              variants={opacityAppear(1, 2)}
+              initial="hidden"
+              whileInView="visible"
+            >
               <Image
-                src="/images/robot4.png"
+                src={robot1}
                 className="w-[450px] absolute bottom-[-12%] right-[-4%]"
-                width={150}
-                height={150}
-                alt="robot4"
+                // width={150}
+                // height={150}
+                alt="robot1"
               />
-            </div>
+            </motion.div>
             <div className="slidebgImg p-[2.8em] py-[3.4em] h-full">
               <div className="flex justify-end">
                 <div className="custom-shadow-2 text-start w-full border-[darkBlue] p-[1.8em] border-solid border-l-0 border-t-[2px] border-b-[2px] border-r-[2px]">
-                  <h2 className="font-[700] text-[1.4em] text-[darkBlue]">
+                  <motion.h2
+                    variants={HorizontalSlideAppear("-40vw", 2, 0)}
+                    initial="hidden"
+                    whileInView="visible"
+                    className="font-[700] text-[1.4em] text-[darkBlue]"
+                  >
                     فناوری جوشکاری رباتیک، سرعت، دقت و کیفیت در خدمت تولید
-                  </h2>
+                  </motion.h2>
                 </div>
               </div>
               <div className="h-[90%] custom-shadow-1 border-0 h-[87%] relative border-solid border-[darkBlue] border-l-[2px] border-b-[2px] p-[1.6em] pt-[7em]">
@@ -384,18 +419,28 @@ const AboutUs: FC<{ activeSlide: number; prevSlides: number }> = ({
                 <div className="absolute bottom-[-2%] bg-[#dad4d4] px-[1em] right-0 word-space-c font-[500] tracking-[4px] text-[darkBlue] text-[1.08em]">
                   MANUFACTURING COMPANY MTSB
                 </div>
-                <div className="absolute right-[8%] opacity-[0.1] font-[800] tracking-[4px] text-[darkBlue] text-[16em]">
+                <motion.div
+                  variants={bottomTotop("100%", 0.5, 3, 0.1)}
+                  initial="hidden"
+                  whileInView="visible"
+                  className="absolute right-[8%]  font-[800] tracking-[4px] text-[darkBlue] text-[16em]"
+                >
                   MTSB
-                </div>
-                <div className="flex justify-end">
+                </motion.div>
+                <motion.div
+                  className="flex justify-end"
+                  variants={opacityAppear(2, 2)}
+                  initial="hidden"
+                  whileInView="visible"
+                >
                   <Image
-                    src="/images/robot5.png"
+                    src={robot2}
                     className="w-[290px] absolute left-[-7%] bottom-[-28%]"
-                    width={150}
-                    height={150}
-                    alt="robot4"
+                    // width={150}
+                    // height={150}
+                    alt="robot2"
                   />
-                </div>
+                </motion.div>
               </div>
             </div>
           </div>

@@ -110,24 +110,34 @@ export const borderMotion: Variants = {
   },
 };
 
-export const bottomTotop: Variants = {
-  hidden: {
-    y: "100%",
-  },
-  visible: {
-    y: 0,
-    transition: {
-      type: "spring",
-      // bounce: 0.4,
-      duration: 1.5,
+export const bottomTotop: (
+  initialY: number | string,
+  delay: number,
+  duration: number | string,
+  finalOpacity?: number
+) => Variants = (initialY, delay, duration, finalOpacity) => {
+  return {
+    hidden: {
+      opacity: 0,
+      y: initialY,
     },
-  },
+    visible: {
+      opacity: finalOpacity ? finalOpacity : 1,
+      y: 0,
+      transition: {
+        type: "spring",
+        delay,
+        duration: duration,
+      },
+    },
+  };
 };
 
 export const opacityAppear: (
   delay: number,
   duration: number | string
 ) => Variants = (delay, duration) => {
+  console.log(delay);
   return {
     hidden: {
       opacity: 0,
