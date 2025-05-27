@@ -378,75 +378,79 @@ const AboutUs: FC<{ activeSlide: number; prevSlides: number }> = ({
       </SwiperSlide>
 
       <SwiperSlide key={5} className="p-[2em] bg-[darkBlue]">
-        {activeSlide + prevSlides == 6 ? (
-          <div className="grid h-full grid-cols-[2fr,8fr]">
-            <motion.div
-              variants={opacityAppear(1, 2)}
-              initial="hidden"
-              whileInView="visible"
-            >
-              <Image
-                src={robot1}
-                className="w-[450px] absolute bottom-[-12%] right-[-4%]"
-                // width={150}
-                // height={150}
-                alt="robot1"
-              />
-            </motion.div>
-            <div className="slidebgImg p-[2.8em] py-[3.4em] h-full">
-              <div className="flex justify-end">
-                <div className="custom-shadow-2 text-start w-full border-[darkBlue] p-[1.8em] border-solid border-l-0 border-t-[2px] border-b-[2px] border-r-[2px]">
-                  <motion.h2
-                    variants={HorizontalSlideAppear("-40vw", 2, 0)}
-                    initial="hidden"
-                    whileInView="visible"
-                    className="font-[700] text-[1.4em] text-[darkBlue]"
-                  >
-                    فناوری جوشکاری رباتیک، سرعت، دقت و کیفیت در خدمت تولید
-                  </motion.h2>
-                </div>
-              </div>
-              <div className="h-[90%] custom-shadow-1 border-0 h-[87%] relative border-solid border-[darkBlue] border-l-[2px] border-b-[2px] p-[1.6em] pt-[7em]">
-                <p className=" text-[darkBlue] leading-[2] font-[600] text-[1.2em] text-justify">
-                  در کارخانه مدرن تجـهیز صنعت برین، بهره گیری از رباتهای پیشرفته
-                  جوشکار، گامی بلند در راستای افزایش بهره وری، یکنواختی کیفیت و
-                  کاهش زمان تولید برداشته ایم. این فناوری نوین، امکان اجرای
-                  اتصالات دقیق، مستحکم و یکدست را در ساخت محصولات فراهم می کند و
-                  باعث ارتقای سطح کیفی تجهیزات آموزشی و اداری تولیدی ما شده است.
-                  با تکـیه بر این سیستم هوشــمند، سفارش های شما با دقت بالا و در
-                  سریع ترین زمان ممکن تولید و تحویل می گردد.
-                </p>
-                <div className="absolute bottom-[-2%] bg-[#dad4d4] px-[1em] right-0 word-space-c font-[500] tracking-[4px] text-[darkBlue] text-[1.08em]">
-                  MANUFACTURING COMPANY MTSB
-                </div>
-                <motion.div
-                  variants={bottomTotop("100%", 0.5, 3, 0.1)}
+        {/* {activeSlide + prevSlides == 6 ? ( */}
+        <div className="grid h-full grid-cols-[2fr,8fr]">
+          <motion.div
+            variants={opacityAppear(1, 2)}
+            initial="hidden"
+            whileInView="visible"
+          >
+            <Image
+              src={robot1}
+              className="w-[450px] absolute bottom-[-12%] right-[-4%]"
+              // width={150}
+              // height={150}
+              alt="robot1"
+            />
+          </motion.div>
+          <div className="slidebgImg p-[2.8em] py-[3.4em] h-full">
+            <div className="flex justify-end">
+              <div className="custom-shadow-2 text-start w-full border-[darkBlue] p-[1.8em] border-solid border-l-0 border-t-[2px] border-b-[2px] border-r-[2px]">
+                <motion.h2
+                  variants={HorizontalSlideAppear("-40vw", 2, 0)}
                   initial="hidden"
                   whileInView="visible"
-                  className="absolute right-[8%]  font-[800] tracking-[4px] text-[darkBlue] text-[16em]"
+                  className="font-[700] text-[1.4em] text-[darkBlue]"
                 >
-                  MTSB
-                </motion.div>
-                <motion.div
-                  className="flex justify-end"
-                  variants={opacityAppear(2, 2)}
-                  initial="hidden"
-                  whileInView="visible"
-                >
-                  <Image
-                    src={robot2}
-                    className="w-[290px] absolute left-[-7%] bottom-[-28%]"
-                    // width={150}
-                    // height={150}
-                    alt="robot2"
-                  />
-                </motion.div>
+                  فناوری جوشکاری رباتیک، سرعت، دقت و کیفیت در خدمت تولید
+                </motion.h2>
               </div>
             </div>
+            <div className="h-[90%] custom-shadow-1 border-0 h-[87%] relative border-solid border-[darkBlue] border-l-[2px] border-b-[2px] p-[1.6em] pt-[7em]">
+              <p className=" text-[darkBlue] leading-[2] font-[600] text-[1.2em] text-justify">
+                در کارخانه مدرن تجـهیز صنعت برین، بهره گیری از رباتهای پیشرفته
+                جوشکار، گامی بلند در راستای افزایش بهره وری، یکنواختی کیفیت و
+                کاهش زمان تولید برداشته ایم. این فناوری نوین، امکان اجرای
+                اتصالات دقیق، مستحکم و یکدست را در ساخت محصولات فراهم می کند و
+                باعث ارتقای سطح کیفی تجهیزات آموزشی و اداری تولیدی ما شده است.
+                با تکـیه بر این سیستم هوشــمند، سفارش های شما با دقت بالا و در
+                سریع ترین زمان ممکن تولید و تحویل می گردد.
+              </p>
+              <div className="absolute bottom-[-2%] bg-[#dad4d4] px-[1em] right-0 word-space-c font-[500] tracking-[4px] text-[darkBlue] text-[1.08em]">
+                MANUFACTURING COMPANY MTSB
+              </div>
+              <motion.div
+                variants={bottomTotop("100%", 0.5, 3, 0.1)}
+                initial="hidden"
+                whileInView="visible"
+                className="absolute right-[8%]  font-[800] tracking-[4px] text-[darkBlue] text-[16em]"
+              >
+                MTSB
+              </motion.div>
+              <motion.div
+                className="flex justify-end"
+                variants={opacityAppear(2, 2)}
+                initial="hidden"
+                whileInView="visible"
+              >
+                <Image
+                  src={robot2}
+                  className="w-[290px] absolute left-[-7%] bottom-[-28%]"
+                  // width={150}
+                  // height={150}
+                  alt="robot2"
+                />
+              </motion.div>
+            </div>
           </div>
-        ) : (
-          <></>
-        )}
+        </div>
+        {/* //  ) : (
+        //   <></>
+        // )}  */}
+      </SwiperSlide>
+
+      <SwiperSlide key={5} className="p-[2em]">
+
       </SwiperSlide>
     </>
   );
