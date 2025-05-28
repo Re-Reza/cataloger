@@ -289,6 +289,10 @@ export default function Home() {
         <></>
       )}
       <Swiper
+        // effect="fade"
+        // fadeEffect={{
+        //   crossFade: true,
+        // }}
         modules={[Mousewheel]}
         mousewheel={true}
         onSlideChange={(swiper) => {
